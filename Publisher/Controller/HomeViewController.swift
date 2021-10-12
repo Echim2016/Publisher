@@ -10,9 +10,19 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var publishButton: UIButton!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
+    
+    var articleList: [Article] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
 
     }
     
@@ -27,6 +37,50 @@ class HomeViewController: UIViewController {
         
         performSegue(withIdentifier: "toPublishPage", sender: nil)
     }
+    
+}
+
+// MARK: - TableView Datasource -
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 2
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(ArticleCell.self)", for: indexPath) as? ArticleCell else {
+            fatalError()
+        }
+        
+        cell.titleLabel.text = "IUIUIUIU"
+        
+        cell.authorLabel.text = "echim"
+        
+        cell.contentLabel.text = "Every UIView with enabled Auto Layout passes 3 steps after initialization: update, layout and render. These steps do not occur in a one-way direction. It’s possible for a step to trigger any previous one or even force the whole cycle to repeat."
+        
+        cell.categoryButton.setTitle("Beauty", for: .normal)
+        
+        cell.createdTimeLabel.text = NSDate().description
+        
+        return cell
+        
+    }
+}
+
+// MARK: - TableView Delegate -
+extension HomeViewController: UITableViewDelegate {
     
 }
 
