@@ -11,23 +11,37 @@ import Firebase
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var publishButton: UIButton!
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
         }
     }
+    
     @IBOutlet weak var containerView: UIView!
+    
+    private var publishVC: PublishViewController?
     
     let db = Firestore.firestore()
     
     var articleList: [Article] = []
     
+    var publishViewIsShown: Bool = false {
+        didSet {
+            containerView.isHidden = !publishViewIsShown
+            publishButton.isUserInteractionEnabled = !publishViewIsShown
+            publishButton.alpha = publishViewIsShown ? 0.2 : 1
+            tableView.isUserInteractionEnabled = !publishViewIsShown
+            tableView.alpha = publishViewIsShown ? 0.2 : 1
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 180
 
             
         fetchArticle()
@@ -42,11 +56,9 @@ class HomeViewController: UIViewController {
 
     @IBAction func pressPublishButton(_ sender: Any) {
         
-        
-        containerView.isHidden = false
-//        performSegue(withIdentifier: "toPublishPage2", sender: nil)
+        displayPublishView()
     }
-    
+
 }
 
 // MARK: - TableView Datasource -
@@ -55,7 +67,6 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return articleList.count
-//        return 2
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,10 +85,8 @@ extension HomeViewController: UITableViewDataSource {
             fatalError()
         }
             
-//        let article = articleList[indexPath.row]
-        
-//        cell.setupCell(title: article.title, authorName: article.author.name, category: article.category, time: article.createdTime.description)
-        
+        let article = articleList[indexPath.row]
+        cell.setupCell(article: article)
         cell.layoutIfNeeded()
         
         return cell
@@ -104,35 +113,37 @@ extension HomeViewController {
                 
                 for document in querySnapshot!.documents {
                     
-//                    guard let id = document.get("id") as? String,
-//                          let title = document.get("title") as? String,
-//                          let category = document.get("category") as? String,
-//                          let author = document.get("author") as? [String:String],
-//                          let content = document.get("content") as? String,
-//                          let createdTime = document.get("createdTime") as? NSDate else {
-////                    else {
-//                              print("article fetch failed")
-//                              return
-//                          }
-//
-//                    guard let authorName = author["name"],
-//                          let authorEmail = author["email"],
-//                          let authorID = author["id"] else {
-//                              print("author fetch failed")
-//                              return
-//                          }
-//
-//                    var authorToDisplay = Author(id: authorID , name: authorName, email: authorEmail)
-//
-//                    var article = Article(id: id, title: title, author: authorToDisplay, category: category, content: content, createdTime: createdTime)
+                    guard let id = document.get("id") as? String,
+                          let title = document.get("title") as? String,
+                          let category = document.get("category") as? String,
+                          let author = document.get("author") as? [String:String],
+                          let content = document.get("content") as? String,
+                          let createdTime = document.get("createdTime") as? Double else {
+                              print("article fetch failed")
+                              return
+                          }
+
+                    guard let authorName = author["name"],
+                          let authorEmail = author["email"],
+                          let authorID = author["id"] else {
+                              print("author fetch failed")
+                              return
+                          }
                     
-//                    self.articleList.append(article)
+                    let article = Article(
+                        id: id,
+                        title: title,
+                        author: Author(id: authorID , name: authorName, email: authorEmail),
+                        category: category,
+                        content: content,
+                        createdTime: NSDate(timeIntervalSince1970: TimeInterval(createdTime))
+                    )
                     
-//                    print(article)
-                    
+                    self.articleList.append(article)
                     
                 }
-                print("-----end-----")
+                print("-----Fetch end-----")
+                self.tableView.reloadData()
             }
         }
     }
@@ -163,5 +174,9 @@ extension HomeViewController {
         publishButton.layer.cornerRadius = publishButton.frame.width / 2
     }
     
+    func displayPublishView() {
+        
+        publishViewIsShown = true
+    }
     
 }

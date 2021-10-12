@@ -80,7 +80,8 @@ extension PublishViewController {
             } else {
                 
                 print("Article added with ID: \(document.documentID)")
-                self.navigationController?.popToRootViewController(animated: true)
+                
+                self.view.isHidden = true
             }
         }
     }
