@@ -39,9 +39,17 @@ class PublishViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    let pickerView = UIPickerView()
+    
+    var pickerSelectedIndex = 0
+    
+    let currentText = Category.beauty.title
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
 
     @IBAction func pressPublish(_ sender: Any) {
@@ -100,6 +108,12 @@ extension PublishViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.accessibilityLabel == "category" {
+            self.initPickerView(touchAt: textField)
+        }
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         guard let text = textField.text,
@@ -119,4 +133,37 @@ extension PublishViewController: UITextFieldDelegate {
             break
         }
     }
+    
+    func initPickerView(touchAt sender: UITextField){
+        
+        let currentText = categoryTextField.text
+        pickerSelectedIndex = Category.allCases.filter{$0.title == currentText}.first?.rawValue ?? 0
+        pickerView.selectRow(pickerSelectedIndex, inComponent: 0, animated: true)
+        
+        categoryTextField.inputView = pickerView
+        categoryTextField.becomeFirstResponder()
+    }
 }
+
+extension PublishViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        Category.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        Category.allCases[row].title
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        categoryTextField.text = Category.allCases[row].title
+        self.view.endEditing(true)
+    }
+    
+}
+

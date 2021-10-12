@@ -18,16 +18,10 @@ class ArticleCell: UITableViewCell {
     func setupCell(article: Article) {
         
         titleLabel.text = article.title
-        
         authorLabel.text = article.author.name
-        
         contentLabel.text = article.content
-        
         categoryButton.titleLabel?.text = article.category
-        
         createdTimeLabel.text = article.createdTime.description
-        
     }
-    
     
 }
