@@ -15,17 +15,17 @@ class ArticleCell: UITableViewCell {
     @IBOutlet weak var createdTimeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
-    func setupCell(title: String, authorName: String, category: String, time: String) {
+    func setupCell(article: Article) {
         
-        titleLabel.text = "IU「亂穿」竟美出新境界!笑稱自己品味奇怪 網笑:靠顏值撐住女神氣場"
+        titleLabel.text = article.title
         
-        authorLabel.text = "echim"
+        authorLabel.text = article.author.name
         
-        contentLabel.text = "Every UIView with enabled Auto Layout passes 3 steps after initialization: update, layout and ender. These steps do not occur in a one-way direction. It’s possible for a step to trigger any previous one or even orce the whole cycle to repeat."
+        contentLabel.text = article.content
         
-        categoryButton.titleLabel?.text = "Beauty"
+        categoryButton.titleLabel?.text = article.category
         
-        createdTimeLabel.text = NSDate().description
+        createdTimeLabel.text = article.createdTime.description
         
     }
     

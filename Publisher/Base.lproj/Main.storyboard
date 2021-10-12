@@ -144,7 +144,6 @@
                         <outlet property="containerView" destination="SND-Vx-EhE" id="oTC-JQ-xmD"/>
                         <outlet property="publishButton" destination="m5a-jm-1VU" id="Nv4-jK-WMN"/>
                         <outlet property="tableView" destination="FVb-7F-VOH" id="B7b-Bf-qeJ"/>
-                        <segue destination="Iko-Ww-tYD" kind="show" identifier="toPublishPage" id="d0W-cv-ebE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hCc-75-yox">
-                                <rect key="frame" x="16" y="138" width="382" height="361.5"/>
+                                <rect key="frame" x="16" y="94" width="382" height="361.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGT-gF-ATb">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
@@ -188,9 +187,6 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
                                             <color key="baseBackgroundColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="pressPublish:" destination="Iko-Ww-tYD" eventType="touchUpInside" id="V1e-1E-kvu"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -204,11 +200,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wss-o5-RJK"/>
-                    <connections>
-                        <outlet property="categoryTextField" destination="A3o-ad-ON5" id="Rkx-q9-t6c"/>
-                        <outlet property="contentTextField" destination="wYV-Kc-b5C" id="cZB-OM-Wlw"/>
-                        <outlet property="titleTextField" destination="YGT-gF-ATb" id="f75-mI-dD7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWj-pT-I1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Publish View Controller-->
         <scene sceneID="ok8-KW-ajW">
             <objects>
-                <viewController id="MLN-Li-W2F" sceneMemberID="viewController">
+                <viewController id="MLN-Li-W2F" customClass="PublishViewController" customModule="Publisher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5gl-MR-Pnd">
                         <rect key="frame" x="0.0" y="0.0" width="382" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,6 +254,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="pressPublish:" destination="MLN-Li-W2F" eventType="editingDidEnd" id="QJ9-Xd-sKH"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZz-2R-hDf">
                                         <rect key="frame" x="0.0" y="328" width="350" height="33.5"/>
@@ -284,6 +278,11 @@
                             <constraint firstItem="yz7-Cp-I5N" firstAttribute="leading" secondItem="Qw7-YW-ieF" secondAttribute="leading" constant="16" id="xW5-fc-XIF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryTextField" destination="rg3-Ea-cY9" id="61b-2w-XG0"/>
+                        <outlet property="contentTextField" destination="dBb-40-4Hn" id="8K8-iC-5hm"/>
+                        <outlet property="titleTextField" destination="iFM-Bq-fxi" id="Iij-cK-2fV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETi-1T-Tbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
