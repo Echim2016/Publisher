@@ -109,7 +109,7 @@ extension PublishViewController: UITextFieldDelegate {
             articleToPublish.title = text
         case "content":
             articleToPublish.content = text
-        case "tag":
+        case "category":
             articleToPublish.category = text
         default:
             break
