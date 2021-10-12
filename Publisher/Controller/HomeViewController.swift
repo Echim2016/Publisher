@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import ESPullToRefresh
 
 protocol PublishViewControllerDelegate: AnyObject {
     func dismissPublishView()
@@ -56,6 +57,7 @@ class HomeViewController: UIViewController {
         
         setupView()
         setupNavigationBar()
+        setPullToRefresh()
     }
 
     @IBAction func pressPublishButton(_ sender: Any) {
@@ -213,5 +215,20 @@ extension HomeViewController: PublishViewControllerDelegate {
     func dismissPublishView() {
         
         self.publishViewIsShown = false
+    }
+}
+
+// MARK: - Pull-to-refresh -
+extension HomeViewController {
+    
+    func setPullToRefresh() {
+        
+        let animator = HomeRefreshHeaderAnimator()
+        self.tableView.es.addPullToRefresh(animator: animator) {
+            [unowned self] in
+            self.tableView.reloadData()
+            self.tableView.es.stopPullToRefresh()
+            self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
+        }
     }
 }
