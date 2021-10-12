@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 
-
 class PublishViewController: UIViewController {
 
     
@@ -33,7 +32,9 @@ class PublishViewController: UIViewController {
         }
     }
     
-    var article = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: nil)
+    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: nil)
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,10 @@ class PublishViewController: UIViewController {
 
     @IBAction func pressPublish(_ sender: Any) {
         
-        
+        textFieldDidEndEditing(titleTextField)
+        textFieldDidEndEditing(categoryTextField)
+        textFieldDidEndEditing(contentTextField)
+        setArticle(articleToPublish)
     }
     
 }
@@ -52,13 +56,36 @@ class PublishViewController: UIViewController {
 // MARK: - Publish Action -
 extension PublishViewController {
     
-    func publsihArticle() {
+    func setArticle(_ article: Article) {
         
+        let articles = db.collection("articles")
+        let document = articles.document()
+        let data: [String: Any] = [ "author": [
+            "email": article.author.email,
+            "id": article.author.id,
+            "name": article.author.name
+        ],
+        "title": article.title,
+        "content": article.content,
+        "createdTime": NSDate().timeIntervalSince1970,
+        "id": document.documentID,
+        "category": article.category
+        ]
+        
+        document.setData(data) { err in
+            
+            if let error = err {
+                
+                print("Error adding article \(error)")
+            } else {
+                
+                print("Article added with ID: \(document.documentID)")
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
     }
     
 }
-
-
 
 // MARK: - TextField -
 extension PublishViewController: UITextFieldDelegate {
@@ -79,11 +106,11 @@ extension PublishViewController: UITextFieldDelegate {
         
         switch textField.accessibilityLabel {
         case "title":
-            article.title = text
+            articleToPublish.title = text
         case "content":
-            article.content = text
+            articleToPublish.content = text
         case "tag":
-            article.tag = text
+            articleToPublish.category = text
         default:
             break
         }
