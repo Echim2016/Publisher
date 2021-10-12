@@ -18,6 +18,7 @@
 		9C48101427151C0700BDF5BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C48101327151C0700BDF5BD /* GoogleService-Info.plist */; };
 		9C627C2427152000007E001B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C627C2327152000007E001B /* UIColor+Extension.swift */; };
 		9C627C2627152496007E001B /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C627C2527152496007E001B /* ArticleCell.swift */; };
+		9C627C2827152A56007E001B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C627C2727152A56007E001B /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9C48101327151C0700BDF5BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C627C2327152000007E001B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9C627C2527152496007E001B /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		9C627C2727152A56007E001B /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		9C48100C27151AA400BDF5BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C627C2727152A56007E001B /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C627C2827152A56007E001B /* Article.swift in Sources */,
 				9C48101227151B2200BDF5BD /* PublishViewController.swift in Sources */,
 				9C480FF9271519C300BDF5BD /* AppDelegate.swift in Sources */,
 				9C627C2627152496007E001B /* ArticleCell.swift in Sources */,

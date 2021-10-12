@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Publish View Controller-->
         <scene sceneID="xyD-r8-Tqr">
             <objects>
-                <viewController id="Iko-Ww-tYD" sceneMemberID="viewController">
+                <viewController id="Iko-Ww-tYD" customClass="PublishViewController" customModule="Publisher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MVP-Os-VH8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,6 +169,9 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
                                             <color key="baseBackgroundColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressPublish:" destination="Iko-Ww-tYD" eventType="touchUpInside" id="V1e-1E-kvu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -182,6 +185,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wss-o5-RJK"/>
+                    <connections>
+                        <outlet property="categoryTextField" destination="A3o-ad-ON5" id="Rkx-q9-t6c"/>
+                        <outlet property="contentTextField" destination="wYV-Kc-b5C" id="cZB-OM-Wlw"/>
+                        <outlet property="titleTextField" destination="YGT-gF-ATb" id="f75-mI-dD7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWj-pT-I1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
