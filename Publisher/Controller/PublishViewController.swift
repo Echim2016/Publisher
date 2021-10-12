@@ -148,8 +148,6 @@ extension PublishViewController: UITextFieldDelegate {
             articleToPublish.title = text
         case "content":
             articleToPublish.content = text
-//        case "category":
-//            articleToPublish.category = text
         default:
             break
         }
@@ -194,7 +192,7 @@ extension PublishViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
-        if textView.textColor == UIColor.lightGray {
+        if textView.textColor == UIColor.systemGray3 {
             textView.text = nil
             textView.textColor = UIColor.black
         }
@@ -206,7 +204,7 @@ extension PublishViewController: UITextViewDelegate {
               !text.isEmpty else {
                   print("empty input")
                   textView.text = "content"
-                  textView.textColor = UIColor.lightGray
+                  textView.textColor = UIColor.systemGray3
                   return
               }
         
