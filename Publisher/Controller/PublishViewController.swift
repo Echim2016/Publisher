@@ -32,7 +32,7 @@ class PublishViewController: UIViewController {
         }
     }
     
-    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: nil)
+    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: NSDate())
     
     let db = Firestore.firestore()
     
