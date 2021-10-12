@@ -59,7 +59,9 @@ class PublishViewController: UIViewController {
         textFieldDidEndEditing(categoryTextField)
         textViewDidEndEditing(contentTextView)
         
-        if articleToPublish.title == "" || articleToPublish.content == "" {
+        if articleToPublish.title == "" ||
+           articleToPublish.content == "content" ||
+           articleToPublish.content == "" {
             
             showAlert(alertText: "Oops!", alertMessage: "Please fill out all the fields.")
             
@@ -149,8 +151,6 @@ extension PublishViewController: UITextFieldDelegate {
         switch textField.accessibilityLabel {
         case "title":
             articleToPublish.title = text
-        case "content":
-            articleToPublish.content = text
         default:
             break
         }
