@@ -116,7 +116,7 @@ extension HomeViewController {
     
     func fetchArticle() {
         
-        db.collection("articles").order(by: "createdTime").getDocuments() { (querySnapshot, err) in
+        db.collection("articles").order(by: "createdTime", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting article: \(err)")
             } else {
