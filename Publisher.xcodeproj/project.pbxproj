@@ -16,6 +16,7 @@
 		9C48101027151AF000BDF5BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48100F27151AF000BDF5BD /* HomeViewController.swift */; };
 		9C48101227151B2200BDF5BD /* PublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48101127151B2200BDF5BD /* PublishViewController.swift */; };
 		9C48101427151C0700BDF5BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C48101327151C0700BDF5BD /* GoogleService-Info.plist */; };
+		9C627C2427152000007E001B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C627C2327152000007E001B /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9C48100F27151AF000BDF5BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9C48101127151B2200BDF5BD /* PublishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishViewController.swift; sourceTree = "<group>"; };
 		9C48101327151C0700BDF5BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9C627C2327152000007E001B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,6 @@
 				36892C9ED048D042E78EADF8 /* Pods-Publisher.debug.xcconfig */,
 				488D593C2D67DA9B93ACE068 /* Pods-Publisher.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,6 +88,7 @@
 				9C481003271519C400BDF5BD /* LaunchScreen.storyboard */,
 				9C481006271519C400BDF5BD /* Info.plist */,
 				9C48101327151C0700BDF5BD /* GoogleService-Info.plist */,
+				9C627C2327152000007E001B /* UIColor+Extension.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -242,6 +244,7 @@
 				9C480FF9271519C300BDF5BD /* AppDelegate.swift in Sources */,
 				9C480FFB271519C300BDF5BD /* SceneDelegate.swift in Sources */,
 				9C48101027151AF000BDF5BD /* HomeViewController.swift in Sources */,
+				9C627C2427152000007E001B /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
