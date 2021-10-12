@@ -23,8 +23,14 @@ class HomeViewController: UIViewController {
         setupNavigationBar()
     }
 
+    @IBAction func pressPublishButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toPublishPage", sender: nil)
+    }
+    
 }
 
+// MARK: - View-related Setup -
 extension HomeViewController {
     
     func setupNavigationBar() {

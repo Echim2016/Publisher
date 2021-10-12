@@ -106,6 +106,9 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="pressPublishButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mqf-ws-HeR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -122,11 +125,67 @@
                     <navigationItem key="navigationItem" id="Wsv-BD-Dcp"/>
                     <connections>
                         <outlet property="publishButton" destination="m5a-jm-1VU" id="Nv4-jK-WMN"/>
+                        <segue destination="Iko-Ww-tYD" kind="show" identifier="toPublishPage" id="d0W-cv-ebE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="116.51785714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xyD-r8-Tqr">
+            <objects>
+                <viewController id="Iko-Ww-tYD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MVP-Os-VH8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hCc-75-yox">
+                                <rect key="frame" x="16" y="138" width="382" height="361.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGT-gF-ATb">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3o-ad-ON5">
+                                        <rect key="frame" x="0.0" y="54" width="382" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="content" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wYV-Kc-b5C">
+                                        <rect key="frame" x="0.0" y="108" width="382" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="9LI-TG-DIh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szQ-Sv-jBt">
+                                        <rect key="frame" x="0.0" y="328" width="382" height="33.5"/>
+                                        <color key="tintColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Publish">
+                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <color key="baseBackgroundColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gdg-xX-fBU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hCc-75-yox" firstAttribute="top" secondItem="Gdg-xX-fBU" secondAttribute="top" constant="50" id="1FW-QV-ChI"/>
+                            <constraint firstItem="Gdg-xX-fBU" firstAttribute="trailing" secondItem="hCc-75-yox" secondAttribute="trailing" constant="16" id="eOY-ls-EIf"/>
+                            <constraint firstItem="hCc-75-yox" firstAttribute="leading" secondItem="Gdg-xX-fBU" secondAttribute="leading" constant="16" id="yLa-Ns-C2L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wss-o5-RJK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jWj-pT-I1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VNZ-yK-N6J">
