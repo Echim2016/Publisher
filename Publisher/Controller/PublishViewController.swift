@@ -26,25 +26,25 @@ class PublishViewController: UIViewController {
             categoryTextField.text = Category.beauty.title
         }
     }
-    
-    @IBOutlet weak var contentTextField: UITextField! {
+
+    @IBOutlet weak var contentTextView: UITextView! {
         didSet {
-            contentTextField.delegate = self
-            contentTextField.accessibilityLabel = "content"
+            contentTextView.delegate = self
+            contentTextView.text = "content"
+            contentTextView.textColor = .systemGray3
+            contentTextView.layer.cornerRadius = 5
+            contentTextView.layer.borderWidth = 0.7
+            contentTextView.layer.borderColor = UIColor.systemGray5.cgColor
         }
     }
     
-    @IBOutlet var texfields: [UITextField]!
-    
-    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "", name: "", email: ""), category: "", content: "", createdTime: Date())
+    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "", name: "", email: ""), category: Category.beauty.title, content: "", createdTime: Date())
     
     let db = Firestore.firestore()
     
     let pickerView = UIPickerView()
     
     var pickerSelectedIndex = 0
-    
-    let currentText = Category.beauty.title
     
     var authorInfo = Author(id: "echim2016", name: "Yi-Chin Hsu", email: "ych@gmail.com")
 //    var authorInfo = Author(id: "", name: "", email: "")
@@ -60,7 +60,7 @@ class PublishViewController: UIViewController {
         
         textFieldDidEndEditing(titleTextField)
         textFieldDidEndEditing(categoryTextField)
-        textFieldDidEndEditing(contentTextField)
+        textViewDidEndEditing(contentTextView)
     
         articleToPublish.author = authorInfo
         setArticle(articleToPublish)
@@ -106,9 +106,16 @@ extension PublishViewController {
                 
                 print("Article added with ID: \(document.documentID)")
                 self.delegate?.dismissPublishView()
-                self.texfields.forEach { $0.text = "" }
+                self.resetUserInput()
             }
         }
+    }
+    
+    func resetUserInput() {
+        
+        titleTextField.text = ""
+        categoryTextField.text = Category.beauty.title
+        contentTextView.text = ""
     }
     
 }
@@ -141,8 +148,8 @@ extension PublishViewController: UITextFieldDelegate {
             articleToPublish.title = text
         case "content":
             articleToPublish.content = text
-        case "category":
-            articleToPublish.category = text
+//        case "category":
+//            articleToPublish.category = text
         default:
             break
         }
@@ -182,3 +189,28 @@ extension PublishViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
 }
 
+// MARK: - TextView -
+extension PublishViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        guard let text = textView.text,
+              !text.isEmpty else {
+                  print("empty input")
+                  textView.text = "content"
+                  textView.textColor = UIColor.lightGray
+                  return
+              }
+        
+        articleToPublish.content = textView.text
+    }
+    
+}

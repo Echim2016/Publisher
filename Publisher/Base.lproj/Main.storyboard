@@ -105,9 +105,9 @@
                                 </prototypes>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SND-Vx-EhE">
-                                <rect key="frame" x="16" y="225" width="382" height="500"/>
+                                <rect key="frame" x="16" y="300" width="382" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="IhX-nz-ylP"/>
+                                    <constraint firstAttribute="height" constant="350" id="IhX-nz-ylP"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="MLN-Li-W2F" kind="embed" identifier="ToPublishPage" id="gzZ-WB-P7o"/>
@@ -235,11 +235,11 @@
             <objects>
                 <viewController id="MLN-Li-W2F" customClass="PublishViewController" customModule="Publisher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5gl-MR-Pnd">
-                        <rect key="frame" x="0.0" y="0.0" width="382" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Cp-I5N">
-                                <rect key="frame" x="16" y="91.5" width="350" height="361.5"/>
+                                <rect key="frame" x="16" y="16.5" width="350" height="311.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFM-Bq-fxi">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
@@ -251,16 +251,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="content" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBb-40-4Hn">
-                                        <rect key="frame" x="0.0" y="108" width="350" height="200"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zif-Ps-f1r">
+                                        <rect key="frame" x="0.0" y="108" width="350" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="cG5-qb-xPr"/>
+                                            <constraint firstAttribute="height" constant="150" id="e5t-Jk-hVT"/>
                                         </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZz-2R-hDf">
-                                        <rect key="frame" x="0.0" y="328" width="350" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="278" width="350" height="33.5"/>
                                         <color key="tintColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Publish">
@@ -284,11 +286,8 @@
                     </view>
                     <connections>
                         <outlet property="categoryTextField" destination="rg3-Ea-cY9" id="61b-2w-XG0"/>
-                        <outlet property="contentTextField" destination="dBb-40-4Hn" id="8K8-iC-5hm"/>
+                        <outlet property="contentTextView" destination="zif-Ps-f1r" id="0NW-sk-Qzr"/>
                         <outlet property="titleTextField" destination="iFM-Bq-fxi" id="Iij-cK-2fV"/>
-                        <outletCollection property="texfields" destination="iFM-Bq-fxi" collectionClass="NSMutableArray" id="eLV-nO-zVM"/>
-                        <outletCollection property="texfields" destination="rg3-Ea-cY9" collectionClass="NSMutableArray" id="7Xv-5Z-EaD"/>
-                        <outletCollection property="texfields" destination="dBb-40-4Hn" collectionClass="NSMutableArray" id="G6e-3v-WBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETi-1T-Tbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,6 +297,9 @@
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
