@@ -80,7 +80,6 @@
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="xUu-KF-6nu" firstAttribute="top" secondItem="Xry-M5-zMq" secondAttribute="bottom" constant="8" symbolic="YES" id="1c8-HM-nHw"/>
                                                         <constraint firstAttribute="trailing" secondItem="6E7-MJ-Lfs" secondAttribute="trailing" id="d72-vS-pdw"/>
                                                         <constraint firstItem="3pa-rD-g3r" firstAttribute="top" secondItem="wko-5d-i9n" secondAttribute="top" id="tGy-WC-9jR"/>
                                                     </constraints>
