@@ -156,7 +156,7 @@ extension PublishViewController: UITextFieldDelegate {
         }
     }
     
-    func initPickerView(touchAt sender: UITextField){
+    func initPickerView(touchAt sender: UITextField) {
         
         let currentText = categoryTextField.text
         pickerSelectedIndex = Category.allCases.filter{$0.title == currentText}.first?.rawValue ?? 0
@@ -188,6 +188,7 @@ extension PublishViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         categoryTextField.text = Category.allCases[row].title
+        articleToPublish.category = Category.allCases[row].title
         self.view.endEditing(true)
     }
     
@@ -213,7 +214,7 @@ extension PublishViewController: UITextViewDelegate {
                   textView.textColor = UIColor.systemGray3
                   return
               }
-        
+        print(textView.text)
         articleToPublish.content = textView.text
     }
     
