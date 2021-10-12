@@ -254,9 +254,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                        <connections>
-                                            <action selector="pressPublish:" destination="MLN-Li-W2F" eventType="editingDidEnd" id="QJ9-Xd-sKH"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZz-2R-hDf">
                                         <rect key="frame" x="0.0" y="328" width="350" height="33.5"/>
@@ -266,6 +263,9 @@
                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="16"/>
                                             <color key="baseBackgroundColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressPublish:" destination="MLN-Li-W2F" eventType="touchUpInside" id="ehj-b2-bSS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -282,6 +282,9 @@
                         <outlet property="categoryTextField" destination="rg3-Ea-cY9" id="61b-2w-XG0"/>
                         <outlet property="contentTextField" destination="dBb-40-4Hn" id="8K8-iC-5hm"/>
                         <outlet property="titleTextField" destination="iFM-Bq-fxi" id="Iij-cK-2fV"/>
+                        <outletCollection property="texfields" destination="iFM-Bq-fxi" collectionClass="NSMutableArray" id="eLV-nO-zVM"/>
+                        <outletCollection property="texfields" destination="rg3-Ea-cY9" collectionClass="NSMutableArray" id="7Xv-5Z-EaD"/>
+                        <outletCollection property="texfields" destination="dBb-40-4Hn" collectionClass="NSMutableArray" id="G6e-3v-WBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETi-1T-Tbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
