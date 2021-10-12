@@ -65,7 +65,13 @@ class HomeViewController: UIViewController {
             destination?.delegate = self
         }
     }
-
+    
+    @objc func tapToDismiss(_ sender: UITapGestureRecognizer? = nil) {
+        
+        if publishViewIsShown {
+            publishViewIsShown = false
+        }
+    }
 }
 
 // MARK: - TableView Datasource -
@@ -196,6 +202,13 @@ extension HomeViewController {
         
         setupNavigationBar()
         setupPullToRefresh()
+        setupGestureRecognizer()
+    }
+    
+    func setupGestureRecognizer() {
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapToDismiss(_:)))
+        view.addGestureRecognizer(tap)
     }
     
     func displayPublishView() {
