@@ -14,6 +14,6 @@ struct Article {
     var author: Author
     var category: String
     var content: String
-    var createdTime: NSDate
+    var createdTime: Date
     
 }

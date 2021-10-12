@@ -23,6 +23,7 @@ class PublishViewController: UIViewController {
         didSet {
             categoryTextField.delegate = self
             categoryTextField.accessibilityLabel = "category"
+            categoryTextField.text = Category.beauty.title
         }
     }
     
@@ -35,7 +36,7 @@ class PublishViewController: UIViewController {
     
     @IBOutlet var texfields: [UITextField]!
     
-    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: NSDate())
+    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: Date())
     
     let db = Firestore.firestore()
     
@@ -76,7 +77,7 @@ extension PublishViewController {
         ],
         "title": article.title,
         "content": article.content,
-        "createdTime": NSDate().timeIntervalSince1970,
+        "createdTime": Date().timeIntervalSince1970,
         "id": document.documentID,
         "category": article.category
         ]

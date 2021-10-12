@@ -22,6 +22,7 @@
 		9C627C2A27152C1C007E001B /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C627C2927152C1C007E001B /* Author.swift */; };
 		9CC6C5112715646D0043C6EE /* HomeRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C5102715646D0043C6EE /* HomeRefreshHeaderAnimator.swift */; };
 		9CC6C5132715658F0043C6EE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C5122715658F0043C6EE /* Category.swift */; };
+		9CC6C515271569390043C6EE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C514271569390043C6EE /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9C627C2927152C1C007E001B /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		9CC6C5102715646D0043C6EE /* HomeRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
 		9CC6C5122715658F0043C6EE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9CC6C514271569390043C6EE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				9C481006271519C400BDF5BD /* Info.plist */,
 				9C48101327151C0700BDF5BD /* GoogleService-Info.plist */,
 				9C627C2327152000007E001B /* UIColor+Extension.swift */,
+				9CC6C514271569390043C6EE /* Date+Extension.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				9C627C2A27152C1C007E001B /* Author.swift in Sources */,
 				9C480FF9271519C300BDF5BD /* AppDelegate.swift in Sources */,
 				9C627C2627152496007E001B /* ArticleCell.swift in Sources */,
+				9CC6C515271569390043C6EE /* Date+Extension.swift in Sources */,
 				9CC6C5112715646D0043C6EE /* HomeRefreshHeaderAnimator.swift in Sources */,
 				9C480FFB271519C300BDF5BD /* SceneDelegate.swift in Sources */,
 				9C48101027151AF000BDF5BD /* HomeViewController.swift in Sources */,

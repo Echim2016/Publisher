@@ -150,7 +150,7 @@ extension HomeViewController {
                         author: Author(id: authorID , name: authorName, email: authorEmail),
                         category: category,
                         content: content,
-                        createdTime: NSDate(timeIntervalSince1970: TimeInterval(createdTime))
+                        createdTime: Date(timeIntervalSince1970: TimeInterval(createdTime))
                     )
                     
                     self.articleList.append(article)

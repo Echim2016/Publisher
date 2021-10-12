@@ -19,7 +19,7 @@ enum Category: Int, CaseIterable {
         case .beauty:
             return "Beauty"
         case .schoolLife:
-            return "SchoolLife"
+            return "School Life"
         case .other:
             return "Other"
         }
