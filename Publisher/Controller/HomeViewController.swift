@@ -20,13 +20,12 @@ class HomeViewController: UIViewController {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.rowHeight = UITableView.automaticDimension
+            tableView.estimatedRowHeight = 180
         }
     }
     @IBOutlet weak var containerView: UIView!
     private var publishVC: PublishViewController?
-    
-    let db = Firestore.firestore()
-    var articleList: [Article] = []
     var publishViewIsShown: Bool = false {
         didSet {
             containerView.isHidden = !publishViewIsShown
@@ -37,12 +36,12 @@ class HomeViewController: UIViewController {
         }
     }
     
+    let db = Firestore.firestore()
+    var articleList: [Article] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 180
-
+    
         fetchArticle()
         setListener()
     }
@@ -51,8 +50,6 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setupView()
-        setupNavigationBar()
-        setPullToRefresh()
     }
 
     @IBAction func pressPublishButton(_ sender: Any) {
@@ -95,12 +92,10 @@ extension HomeViewController: UITableViewDataSource {
             fatalError()
         }
             
-        let article = articleList[indexPath.row]
-        cell.setupCell(article: article)
+        cell.setupCell(article: articleList[indexPath.row])
         cell.layoutIfNeeded()
         
         return cell
-        
     }
 }
 
@@ -115,6 +110,7 @@ extension HomeViewController {
     func fetchArticle() {
         
         db.collection("articles").order(by: "createdTime", descending: true).getDocuments() { (querySnapshot, err) in
+            
             if let err = err {
                 print("Error getting article: \(err)")
             } else {
@@ -156,6 +152,7 @@ extension HomeViewController {
                 self.tableView.reloadData()
             }
         }
+        
     }
     
     func setListener() {
@@ -196,6 +193,9 @@ extension HomeViewController {
         
         containerView.isHidden = true
         publishButton.layer.cornerRadius = publishButton.frame.width / 2
+        
+        setupNavigationBar()
+        setupPullToRefresh()
     }
     
     func displayPublishView() {
@@ -205,11 +205,11 @@ extension HomeViewController {
     
 }
 
-// MARK: - Delegate -
+// MARK: - Publish Delegate -
 extension HomeViewController: PublishViewControllerDelegate {
     
     func dismissPublishView() {
-        
+
         self.publishViewIsShown = false
     }
 }
@@ -217,7 +217,7 @@ extension HomeViewController: PublishViewControllerDelegate {
 // MARK: - Pull-to-refresh -
 extension HomeViewController {
     
-    func setPullToRefresh() {
+    func setupPullToRefresh() {
         
         let animator = HomeRefreshHeaderAnimator()
         self.tableView.es.addPullToRefresh(animator: animator) {

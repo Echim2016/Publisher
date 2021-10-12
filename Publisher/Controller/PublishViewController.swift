@@ -62,6 +62,7 @@ class PublishViewController: UIViewController {
         if articleToPublish.title == "" || articleToPublish.content == "" {
             
             showAlert(alertText: "Oops!", alertMessage: "Please fill out all the fields.")
+            
         } else {
             
             articleToPublish.author = authorInfo
@@ -79,8 +80,6 @@ extension PublishViewController {
         
         let articles = db.collection("articles")
         let document = articles.document()
-        
-        
         guard !article.author.email.isEmpty,
               !article.author.id.isEmpty,
               !article.author.name.isEmpty else {
@@ -172,15 +171,18 @@ extension PublishViewController: UITextFieldDelegate {
 extension PublishViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        Category.allCases.count
+        
+        return Category.allCases.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        Category.allCases[row].title
+        
+        return Category.allCases[row].title
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
