@@ -214,7 +214,7 @@ extension PublishViewController: UITextViewDelegate {
                   textView.textColor = UIColor.systemGray3
                   return
               }
-        print(textView.text)
+        
         articleToPublish.content = textView.text
     }
     

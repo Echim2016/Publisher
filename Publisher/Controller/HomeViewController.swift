@@ -69,7 +69,8 @@ class HomeViewController: UIViewController {
     @objc func tapToDismiss(_ sender: UITapGestureRecognizer? = nil) {
         
         if publishViewIsShown {
-            publishViewIsShown = false
+            
+            dismissPublishView()
         }
     }
 }
@@ -223,7 +224,7 @@ extension HomeViewController: PublishViewControllerDelegate {
     
     func dismissPublishView() {
 
-        self.publishViewIsShown = false
+        publishViewIsShown = false
     }
 }
 
