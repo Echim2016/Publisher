@@ -105,9 +105,9 @@
                                 </prototypes>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SND-Vx-EhE">
-                                <rect key="frame" x="16" y="300" width="382" height="350"/>
+                                <rect key="frame" x="16" y="325" width="382" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="IhX-nz-ylP"/>
+                                    <constraint firstAttribute="height" constant="300" id="IhX-nz-ylP"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="MLN-Li-W2F" kind="embed" identifier="ToPublishPage" id="gzZ-WB-P7o"/>
@@ -235,34 +235,40 @@
             <objects>
                 <viewController id="MLN-Li-W2F" customClass="PublishViewController" customModule="Publisher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5gl-MR-Pnd">
-                        <rect key="frame" x="0.0" y="0.0" width="382" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Cp-I5N">
-                                <rect key="frame" x="16" y="16.5" width="350" height="311.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yz7-Cp-I5N">
+                                <rect key="frame" x="4" y="4" width="374" height="292"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFM-Bq-fxi">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFM-Bq-fxi">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="sQ3-Ip-pSZ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rg3-Ea-cY9">
-                                        <rect key="frame" x="0.0" y="54" width="350" height="34"/>
+                                        <rect key="frame" x="0.0" y="38" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="gw0-29-BbF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zif-Ps-f1r">
-                                        <rect key="frame" x="0.0" y="108" width="350" height="150"/>
+                                        <rect key="frame" x="0.0" y="76" width="374" height="178"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="e5t-Jk-hVT"/>
-                                        </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZz-2R-hDf">
-                                        <rect key="frame" x="0.0" y="278" width="350" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="258" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="0mW-ZA-jj8"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Publish">
@@ -279,9 +285,10 @@
                         <viewLayoutGuide key="safeArea" id="Qw7-YW-ieF"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="yz7-Cp-I5N" firstAttribute="centerY" secondItem="Qw7-YW-ieF" secondAttribute="centerY" id="Fa3-zA-GIG"/>
-                            <constraint firstItem="Qw7-YW-ieF" firstAttribute="trailing" secondItem="yz7-Cp-I5N" secondAttribute="trailing" constant="16" id="X1F-Y8-Tz1"/>
-                            <constraint firstItem="yz7-Cp-I5N" firstAttribute="leading" secondItem="Qw7-YW-ieF" secondAttribute="leading" constant="16" id="xW5-fc-XIF"/>
+                            <constraint firstAttribute="top" secondItem="yz7-Cp-I5N" secondAttribute="top" constant="-4" id="9rh-99-Avj"/>
+                            <constraint firstItem="yz7-Cp-I5N" firstAttribute="bottom" secondItem="Qw7-YW-ieF" secondAttribute="bottom" constant="-4" id="ShG-9Q-5M8"/>
+                            <constraint firstItem="Qw7-YW-ieF" firstAttribute="trailing" secondItem="yz7-Cp-I5N" secondAttribute="trailing" constant="4" id="X1F-Y8-Tz1"/>
+                            <constraint firstItem="yz7-Cp-I5N" firstAttribute="leading" secondItem="Qw7-YW-ieF" secondAttribute="leading" constant="4" id="xW5-fc-XIF"/>
                         </constraints>
                     </view>
                     <connections>
