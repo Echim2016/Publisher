@@ -67,7 +67,6 @@ class HomeViewController: UIViewController {
         if segue.identifier == "ToPublishPage" {
             
             let destination = segue.destination as? PublishViewController
-            
             destination?.delegate = self
         }
     }

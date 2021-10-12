@@ -34,6 +34,8 @@ class PublishViewController: UIViewController {
         }
     }
     
+    @IBOutlet var texfields: [UITextField]!
+    
     var articleToPublish = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: NSDate())
     
     let db = Firestore.firestore()
@@ -43,7 +45,6 @@ class PublishViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func pressPublish(_ sender: Any) {
         
@@ -83,6 +84,9 @@ extension PublishViewController {
                 
                 print("Article added with ID: \(document.documentID)")
                 self.delegate?.dismissPublishView()
+                self.texfields.forEach {
+                    $0.text = ""
+                }
             }
         }
     }
