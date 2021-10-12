@@ -33,7 +33,7 @@ class PublishViewController: UIViewController {
         }
     }
     
-    var article = Article.init(id: "", title: "", content: "", tag: "", author: "echim", createdTime: nil)
+    var article = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()

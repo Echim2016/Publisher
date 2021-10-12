@@ -11,9 +11,9 @@ struct Article {
     
     var id: String
     var title: String
+    var author: Author
+    var category: String
     var content: String
-    var tag: String
-    var author: String
     var createdTime: NSDate?
     
 }
