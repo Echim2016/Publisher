@@ -11,7 +11,11 @@ class ArticleCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var categoryButton: UIButton! {
+        didSet {
+            categoryButton.isUserInteractionEnabled = false
+        }
+    }
     @IBOutlet weak var createdTimeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
@@ -21,7 +25,7 @@ class ArticleCell: UITableViewCell {
         authorLabel.text = article.author.name
         contentLabel.text = article.content
         categoryButton.titleLabel?.text = article.category
-        createdTimeLabel.text = article.createdTime.description
+        createdTimeLabel.text = article.createdTime.getFormattedDate(format: "yyyy-MM-dd HH:mm:ss")
     }
     
 }
