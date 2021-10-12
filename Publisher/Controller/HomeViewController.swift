@@ -16,22 +16,17 @@ protocol PublishViewControllerDelegate: AnyObject {
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var publishButton: UIButton!
-    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
         }
     }
-    
     @IBOutlet weak var containerView: UIView!
-    
     private var publishVC: PublishViewController?
     
     let db = Firestore.firestore()
-    
     var articleList: [Article] = []
-    
     var publishViewIsShown: Bool = false {
         didSet {
             containerView.isHidden = !publishViewIsShown
@@ -157,7 +152,7 @@ extension HomeViewController {
                     self.articleList.append(article)
                     
                 }
-                print("-----Fetch end-----")
+
                 self.tableView.reloadData()
             }
         }

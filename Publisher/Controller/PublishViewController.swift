@@ -58,9 +58,16 @@ class PublishViewController: UIViewController {
         textFieldDidEndEditing(titleTextField)
         textFieldDidEndEditing(categoryTextField)
         textViewDidEndEditing(contentTextView)
-    
-        articleToPublish.author = authorInfo
-        setArticle(articleToPublish)
+        
+        if articleToPublish.title == "" || articleToPublish.content == "" {
+            
+            showAlert(alertText: "Oops!", alertMessage: "Please fill out all the fields.")
+        } else {
+            
+            articleToPublish.author = authorInfo
+            setArticle(articleToPublish)
+        }
+        
     }
     
 }
