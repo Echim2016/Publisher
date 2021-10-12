@@ -36,7 +36,7 @@ class PublishViewController: UIViewController {
     
     @IBOutlet var texfields: [UITextField]!
     
-    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "echim2016", name: "echim", email: "yyyyy@gmail.com"), category: "", content: "", createdTime: Date())
+    var articleToPublish = Article.init(id: "", title: "", author: Author(id: "", name: "", email: ""), category: "", content: "", createdTime: Date())
     
     let db = Firestore.firestore()
     
@@ -45,6 +45,9 @@ class PublishViewController: UIViewController {
     var pickerSelectedIndex = 0
     
     let currentText = Category.beauty.title
+    
+    var authorInfo = Author(id: "echim2016", name: "Yi-Chin Hsu", email: "ych@gmail.com")
+//    var authorInfo = Author(id: "", name: "", email: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +61,8 @@ class PublishViewController: UIViewController {
         textFieldDidEndEditing(titleTextField)
         textFieldDidEndEditing(categoryTextField)
         textFieldDidEndEditing(contentTextField)
+    
+        articleToPublish.author = authorInfo
         setArticle(articleToPublish)
     }
     
@@ -70,6 +75,16 @@ extension PublishViewController {
         
         let articles = db.collection("articles")
         let document = articles.document()
+        
+        
+        guard !article.author.email.isEmpty,
+              !article.author.id.isEmpty,
+              !article.author.name.isEmpty else {
+                  
+                  showAlert(alertText: "Oops!", alertMessage: "Author info not found")
+                  return
+              }
+        
         let data: [String: Any] = [ "author": [
             "email": article.author.email,
             "id": article.author.id,
@@ -91,9 +106,7 @@ extension PublishViewController {
                 
                 print("Article added with ID: \(document.documentID)")
                 self.delegate?.dismissPublishView()
-                self.texfields.forEach {
-                    $0.text = ""
-                }
+                self.texfields.forEach { $0.text = "" }
             }
         }
     }
@@ -168,3 +181,12 @@ extension PublishViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
 }
 
+extension UIViewController {
+    
+    func showAlert(alertText : String, alertMessage : String) {
+        
+        let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}
