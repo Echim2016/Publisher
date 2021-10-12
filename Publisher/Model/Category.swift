@@ -24,5 +24,4 @@ enum Category: Int, CaseIterable {
             return "Other"
         }
     }
-    
 }

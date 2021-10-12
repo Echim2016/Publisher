@@ -39,11 +39,8 @@ class PublishViewController: UIViewController {
     }
     
     var articleToPublish = Article.init(id: "", title: "", author: Author(id: "", name: "", email: ""), category: Category.beauty.title, content: "", createdTime: Date())
-    
     let db = Firestore.firestore()
-    
     let pickerView = UIPickerView()
-    
     var pickerSelectedIndex = 0
     
     var authorInfo = Author(id: "echim2016", name: "Yi-Chin Hsu", email: "ych@gmail.com")
