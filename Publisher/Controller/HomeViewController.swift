@@ -47,8 +47,8 @@ class HomeViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 180
 
-        print(self)
         fetchArticle()
+        setListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,6 +158,20 @@ extension HomeViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    func setListener() {
+
+        db.collection("articles")
+            .addSnapshotListener(includeMetadataChanges: true) { documentSnapshot, error in
+                
+                if let error = error {
+                    print(error)
+                } else {
+                    self.fetchArticle()
+                    print("Database has updated")
+                }
+            }
     }
     
 }

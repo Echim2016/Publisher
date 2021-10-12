@@ -8,7 +8,6 @@
 import UIKit
 import Firebase
 
-
 class PublishViewController: UIViewController {
 
     weak var delegate: PublishViewControllerDelegate?
@@ -43,7 +42,6 @@ class PublishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func pressPublish(_ sender: Any) {
