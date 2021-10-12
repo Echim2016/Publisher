@@ -32,36 +32,39 @@
                                                     <rect key="frame" x="16" y="16" width="382" height="112.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pa-rD-g3r">
-                                                            <rect key="frame" x="0.0" y="0.0" width="39" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="39" height="25.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6E7-MJ-Lfs">
-                                                            <rect key="frame" x="0.0" y="32" width="382" height="25"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="6E7-MJ-Lfs">
+                                                            <rect key="frame" x="0.0" y="33.5" width="382" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkO-TI-2Du">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="254" height="25"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-HU-jl3">
-                                                                    <rect key="frame" x="262" y="0.0" width="120" height="25"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="120" id="dqi-Q9-y1C"/>
-                                                                        <constraint firstAttribute="height" constant="25" id="rMu-Dy-pw2"/>
-                                                                    </constraints>
-                                                                    <color key="tintColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="gray" title="category">
-                                                                        <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
-                                                                    </buttonConfiguration>
-                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jy3-tG-Yts" customClass="PaddingLabel" customModule="Publisher" customModuleProvider="target">
+                                                                    <rect key="frame" x="313" y="0.0" width="69" height="20.5"/>
+                                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                                    <color key="textColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
+                                                                            <real key="value" value="8"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xry-M5-zMq">
-                                                            <rect key="frame" x="0.0" y="65" width="36.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="62" width="36.5" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.5" id="eRi-fb-rgJ"/>
                                                             </constraints>
@@ -70,7 +73,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUu-KF-6nu">
-                                                            <rect key="frame" x="0.0" y="93.5" width="58.5" height="19"/>
+                                                            <rect key="frame" x="0.0" y="90.5" width="58.5" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -93,7 +96,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="authorLabel" destination="XkO-TI-2Du" id="XFu-SX-mUS"/>
-                                            <outlet property="categoryButton" destination="5uw-HU-jl3" id="Usb-Ak-ejo"/>
+                                            <outlet property="categoryLabel" destination="Jy3-tG-Yts" id="Frp-3x-YTi"/>
                                             <outlet property="contentLabel" destination="xUu-KF-6nu" id="Fph-De-FQJ"/>
                                             <outlet property="createdTimeLabel" destination="Xry-M5-zMq" id="l0D-aI-L9P"/>
                                             <outlet property="titleLabel" destination="3pa-rD-g3r" id="JVG-KM-mhh"/>
@@ -297,6 +300,9 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

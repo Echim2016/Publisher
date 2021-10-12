@@ -24,6 +24,7 @@
 		9CC6C5132715658F0043C6EE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C5122715658F0043C6EE /* Category.swift */; };
 		9CC6C515271569390043C6EE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C514271569390043C6EE /* Date+Extension.swift */; };
 		9CC6C517271574D90043C6EE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C516271574D90043C6EE /* UIViewController+Extension.swift */; };
+		9CC6C519271577880043C6EE /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C518271577880043C6EE /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		9CC6C5122715658F0043C6EE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9CC6C514271569390043C6EE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		9CC6C516271574D90043C6EE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		9CC6C518271577880043C6EE /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				9C627C2527152496007E001B /* ArticleCell.swift */,
 				9CC6C5102715646D0043C6EE /* HomeRefreshHeaderAnimator.swift */,
+				9CC6C518271577880043C6EE /* PaddingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				9CC6C515271569390043C6EE /* Date+Extension.swift in Sources */,
 				9CC6C5112715646D0043C6EE /* HomeRefreshHeaderAnimator.swift in Sources */,
 				9C480FFB271519C300BDF5BD /* SceneDelegate.swift in Sources */,
+				9CC6C519271577880043C6EE /* PaddingLabel.swift in Sources */,
 				9C48101027151AF000BDF5BD /* HomeViewController.swift in Sources */,
 				9C627C2427152000007E001B /* UIColor+Extension.swift in Sources */,
 			);
