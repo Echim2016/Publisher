@@ -23,6 +23,7 @@
 		9CC6C5112715646D0043C6EE /* HomeRefreshHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C5102715646D0043C6EE /* HomeRefreshHeaderAnimator.swift */; };
 		9CC6C5132715658F0043C6EE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C5122715658F0043C6EE /* Category.swift */; };
 		9CC6C515271569390043C6EE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C514271569390043C6EE /* Date+Extension.swift */; };
+		9CC6C517271574D90043C6EE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC6C516271574D90043C6EE /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9CC6C5102715646D0043C6EE /* HomeRefreshHeaderAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRefreshHeaderAnimator.swift; sourceTree = "<group>"; };
 		9CC6C5122715658F0043C6EE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9CC6C514271569390043C6EE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9CC6C516271574D90043C6EE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				9C48101327151C0700BDF5BD /* GoogleService-Info.plist */,
 				9C627C2327152000007E001B /* UIColor+Extension.swift */,
 				9CC6C514271569390043C6EE /* Date+Extension.swift */,
+				9CC6C516271574D90043C6EE /* UIViewController+Extension.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC6C517271574D90043C6EE /* UIViewController+Extension.swift in Sources */,
 				9C627C2827152A56007E001B /* Article.swift in Sources */,
 				9CC6C5132715658F0043C6EE /* Category.swift in Sources */,
 				9C48101227151B2200BDF5BD /* PublishViewController.swift in Sources */,

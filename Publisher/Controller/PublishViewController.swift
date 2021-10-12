@@ -159,6 +159,7 @@ extension PublishViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - PickerView -
 extension PublishViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -181,12 +182,3 @@ extension PublishViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
 }
 
-extension UIViewController {
-    
-    func showAlert(alertText : String, alertMessage : String) {
-        
-        let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-}
