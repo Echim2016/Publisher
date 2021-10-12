@@ -96,6 +96,7 @@
 		9C480FF7271519C300BDF5BD /* Publisher */ = {
 			isa = PBXGroup;
 			children = (
+				9CC6C51E271588E40043C6EE /* Extension */,
 				9C48100E27151AB100BDF5BD /* View */,
 				9C48100D27151AA900BDF5BD /* Controller */,
 				9C48100C27151AA400BDF5BD /* Model */,
@@ -106,9 +107,6 @@
 				9C481003271519C400BDF5BD /* LaunchScreen.storyboard */,
 				9C481006271519C400BDF5BD /* Info.plist */,
 				9C48101327151C0700BDF5BD /* GoogleService-Info.plist */,
-				9C627C2327152000007E001B /* UIColor+Extension.swift */,
-				9CC6C514271569390043C6EE /* Date+Extension.swift */,
-				9CC6C516271574D90043C6EE /* UIViewController+Extension.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -141,6 +139,16 @@
 				9CC6C518271577880043C6EE /* PaddingLabel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9CC6C51E271588E40043C6EE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C627C2327152000007E001B /* UIColor+Extension.swift */,
+				9CC6C514271569390043C6EE /* Date+Extension.swift */,
+				9CC6C516271574D90043C6EE /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B397C6862B317924A3811BF5 /* Frameworks */ = {
