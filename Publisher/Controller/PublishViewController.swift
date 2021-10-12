@@ -8,8 +8,10 @@
 import UIKit
 import Firebase
 
+
 class PublishViewController: UIViewController {
 
+    weak var delegate: PublishViewControllerDelegate?
     
     @IBOutlet weak var titleTextField: UITextField! {
         didSet {
@@ -80,8 +82,7 @@ extension PublishViewController {
             } else {
                 
                 print("Article added with ID: \(document.documentID)")
-                
-                self.view.isHidden = true
+                self.delegate?.dismissPublishView()
             }
         }
     }

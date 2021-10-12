@@ -8,6 +8,10 @@
 import UIKit
 import Firebase
 
+protocol PublishViewControllerDelegate: AnyObject {
+    func dismissPublishView()
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var publishButton: UIButton!
@@ -43,7 +47,7 @@ class HomeViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 180
 
-            
+        print(self)
         fetchArticle()
     }
     
@@ -57,6 +61,15 @@ class HomeViewController: UIViewController {
     @IBAction func pressPublishButton(_ sender: Any) {
         
         displayPublishView()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToPublishPage" {
+            
+            let destination = segue.destination as? PublishViewController
+            
+            destination?.delegate = self
+        }
     }
 
 }
@@ -179,4 +192,13 @@ extension HomeViewController {
         publishViewIsShown = true
     }
     
+}
+
+// MARK: - Delegate -
+extension HomeViewController: PublishViewControllerDelegate {
+    
+    func dismissPublishView() {
+        
+        self.publishViewIsShown = false
+    }
 }
