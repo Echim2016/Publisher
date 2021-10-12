@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,6 +48,7 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-HU-jl3">
                                                                     <rect key="frame" x="289.5" y="0.0" width="81.5" height="31"/>
+                                                                    <color key="tintColor" red="0.2156862745" green="0.027450980390000001" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="gray" title="category"/>
                                                                 </button>
@@ -93,6 +95,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m5a-jm-1VU">
+                                <rect key="frame" x="328" y="776" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.027450980392156862" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="PaD-g5-mdn"/>
+                                    <constraint firstAttribute="width" constant="70" id="w0O-QH-6Oe"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,10 +114,15 @@
                             <constraint firstItem="FVb-7F-VOH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8Ol-cK-jbu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FVb-7F-VOH" secondAttribute="trailing" id="JMf-iE-bO2"/>
                             <constraint firstItem="FVb-7F-VOH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cjt-7X-d2t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m5a-jm-1VU" secondAttribute="trailing" constant="16" id="slP-Wp-0Lr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m5a-jm-1VU" secondAttribute="bottom" constant="16" id="vcP-a7-UEj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FVb-7F-VOH" secondAttribute="bottom" id="xVe-XI-ZHy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wsv-BD-Dcp"/>
+                    <connections>
+                        <outlet property="publishButton" destination="m5a-jm-1VU" id="Nv4-jK-WMN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,6 +151,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

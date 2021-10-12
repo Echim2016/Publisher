@@ -9,9 +9,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var publishButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupView()
         setupNavigationBar()
     }
 
@@ -32,6 +40,11 @@ extension HomeViewController {
         appearance.backgroundColor = UIColor.bluePurple
         navigationController?.navigationBar.standardAppearance = appearance;
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+    }
+    
+    func setupView() {
+        
+        publishButton.layer.cornerRadius = publishButton.frame.width / 2
     }
     
     
